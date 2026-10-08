@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="ClipOS local clipping workspace: transparent terms and privacy information."><meta name="referrer" content="no-referrer"><title>Privacy Policy · ClipOS</title><link rel="stylesheet" href="styles.css"></head><body><a class="skip" href="#main">Skip to content</a>
+<header><a class="brand" href="index.html">Clip<span>OS</span></a>
+<nav aria-label="Legal navigation"><a href="index.html">Home</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></nav></header>
+<main id="main" class="wrap"><span class="kicker">ClipOS · Legal information</span>
+<h1>Privacy Policy</h1>
+<p class="meta" data-publication-date="2026-10-08">Effective date: October 8, 2026.</p>
+
+<div class="layout">
+<aside class="toc" aria-label="Page contents"><a href="#scope">Operator and coverage</a><a href="#information">Information the application handles</a><a href="#uses">How information is used</a><a href="#storage">Local storage and security</a><a href="#sharing">External requests and sharing</a><a href="#retention">Retention and deletion</a><a href="#choices">Authorization choices, revocation and requests</a><a href="#website">Public website and browser data</a><a href="#children">People appearing in media and applicable requirements</a><a href="#updates">Policy updates and contact</a></aside>
+<article class="policy">
+<section id="scope">
+<h2>1. Operator and coverage</h2>
+<p>Operator: ClipOS.</p>
+<p>Privacy and support contact: <a href="mailto:trevorderiso5@gmail.com">trevorderiso5@gmail.com</a>.</p>
+<p>Operating location: Texas, United States. Governing jurisdiction: Texas, United States.</p>
+<p>ClipOS is the application and operating name. No registered LLC or corporation is represented by these documents.</p>
+<p>This policy describes the current private, locally operated ClipOS application and this separate public informational website. The application runs on the owner's controlled device. The public website is not a dashboard, does not accept TikTok authorization codes, and has no account or campaign submission forms.</p></section>
+<section id="information">
+<h2>2. Information the application handles</h2>
+<table><thead>
+<tr><th>Category</th><th>Current processing and purpose</th></tr></thead><tbody>
+<tr><td>TikTok identity</td><td>App-specific account identifier (<code>open_id</code>) and display name via <code>user.info.basic</code>; username only if <code>user.info.profile</code> is configured, approved and granted. Used to verify and label the dedicated connected account.</td></tr>
+<tr><td>OAuth authorization</td><td>Provider token response, including access/refresh tokens, granted scopes, account identifiers and expiry information, used to establish and refresh authorized API access.</td></tr>
+<tr><td>Connection security</td><td>Hashed, expiring session-bound OAuth state and, in Desktop mode, an encrypted PKCE verifier. Used to prevent forged or replayed authorization.</td></tr>
+<tr><td>Workspace authentication</td><td>An Argon2-hashed owner password, a session cookie, hashed session token, CSRF value and expiry. Security failure records can contain the request's network address. Used to protect the private dashboard.</td></tr>
+<tr><td>Media and workspace records</td><td>Authorized source videos, speech transcripts, generated clips/captions, checksums, campaign rules and evidence, review feedback, publication/submission records, costs and owner-supported payout information. Used to run the selected clipping workflows.</td></tr>
+<tr><td>Support and privacy correspondence</td><td>Your email address, message and any voluntarily provided account identifiers. Used to answer support inquiries, verify account control and handle privacy requests.</td></tr>
+<tr><td>Operational history</td><td>Jobs, attempts, errors, audit events, verification timestamps and resource measurements. Used for troubleshooting, accountability and workflow improvement.</td></tr></tbody></table>
+<p>The current TikTok identity lookup requests only <code>open_id</code>, <code>display_name</code>, and optionally <code>username</code>. Although a scope can permit additional fields, the application does not currently request avatars, follower statistics, private messages, email addresses or a TikTok password. It does not automatically collect TikTok video lists or live performance analytics through these identity scopes.</p></section>
+<section id="uses">
+<h2>3. How information is used</h2>
+<p>TikTok data verifies the authorized account, displays its identity and maintains the connection. It is not used to infer campaign rights or publishing permission. Reconnecting or refreshing an access token does not expand the permissions the person granted.</p>
+<p>Authorized video content is transcribed, selected and rendered locally. Owner review feedback produces bounded local selection guidance. Historical owner-supported performance and submission records inform recommendations; no model-training claim or automatic earnings verification is made. TikTok identity and tokens are not used to train AI models or sold for advertising.</p></section>
+<section id="storage">
+<h2>4. Local storage and security</h2>
+<p>The application stores records in a local PostgreSQL database and videos in local files. OAuth tokens are encrypted with Fernet using an owner-controlled key stored separately in private application configuration. The owner password is hashed, not stored as plaintext. Application credentials are not embedded in the public legal site or public source files.</p>
+<p>Desktop PKCE verifiers are encrypted in the connection-state record and removed when that state is consumed. The current API removes OAuth callback query strings from its Uvicorn access logs and returns callback responses with no-referrer/no-store protections. Security measures reduce risk but cannot guarantee against device compromise, unsafe backup handling, or operator misconfiguration.</p>
+<p>The owner can create encrypted database/configuration backups with ClipOS's backup tool and optionally include media. Backups and recovery copies remain under the owner's control; a restored copy may contain older tokens and records.</p></section>
+<section id="sharing">
+<h2>5. External requests and sharing</h2>
+<p>Local operation does not mean that no network requests occur. Authorizing TikTok sends the required authorization parameters to TikTok. The local backend exchanges the code and, when needed, refreshes tokens and sends authenticated identity requests to TikTok's official API over HTTPS. TikTok receives the relevant authorization information and network-request metadata under its own policies.</p>
+<p>Sources or permitted campaign policy documents may be retrieved from providers the owner authorizes. Manual publication sends selected content to the platform through the operator's own action; any other separately configured integration must be disclosed before use. Cloud media storage and hosted application operation are not part of the current setup. Paid AI providers are disabled by default; the documented current video/AI workflow runs locally.</p>
+<p>Messages sent to the public contact address are processed through Gmail, which is an external email service, rather than stored exclusively in the local application. Email correspondence may be retained while addressing the inquiry and any applicable legal or security obligations. Do not send passwords, tokens or sensitive media by email.</p>
+<p>ClipOS has no implemented data-sale, advertising, or third-party analytics-tracking feature. The operator may share information only as specifically authorized, as needed to respond to a legitimate request or applicable legal obligation, or as otherwise disclosed before processing. Recipient platforms apply their own privacy terms.</p></section>
+<section id="retention">
+<h2>6. Retention and deletion</h2>
+<p>No scheduled automatic purge of media, transcripts, review history, database records, or operational logs is currently implemented. These records remain until the owner removes them or carries out an applicable retention/deletion request. Retention and any requested deletion are evaluated against the actual purpose and applicable campaign or legal obligations.</p>
+<p>OAuth state is valid for 10 minutes and a workspace session is valid for 8 hours; those validity limits do not mean expired database rows are automatically deleted. An unconsumed expired state can still contain its encrypted verifier. Tokens are retained in encrypted form while connected and refreshed according to provider expiry information; expiration alone is not a promise of immediate erasure.</p>
+<p>Disconnect clears the current account identifier and stored credential. Display-name/username metadata, audit history, campaign records, prior publication evidence and backups may remain. Delete from Clip Review Studio archives a candidate and preserves its media and history; it is not permanent erasure. Backup copies remain until the owner manually removes them; the application does not enforce automatic backup expiration. Deleting a local record does not delete an already published social post.</p>
+<p>Retention is owner-managed rather than governed by an automatic fixed-duration purge. Data may be retained for ongoing authorized workflows, campaign evidence, security, dispute resolution or applicable legal obligations. When processing is no longer needed, the operator handles removal manually, including review of backup copies. No fixed backup rotation or log expiration is currently enforced by the application.</p></section>
+<section id="choices">
+<h2>7. Authorization choices, revocation and requests</h2>
+<p>You can decline authorization, decline optional profile permission, or disconnect from ClipOS. To end TikTok's authorization as well, remove ClipOS in TikTok's connected-app permissions settings. The application's local Disconnect button does not currently call TikTok's revoke endpoint. Revoking the provider grant stops authorized future access but does not automatically erase previously stored information.</p>
+<p>Send access, correction or deletion requests to <a href="mailto:trevorderiso5@gmail.com">trevorderiso5@gmail.com</a> with the subject “ClipOS data request.” Identify the connected TikTok username or other information needed to locate your records and describe the request. Do not send passwords, access tokens or identity documents unless a secure verification method is separately arranged. The operator may request proportionate proof of account control, review the request, and manually remove eligible account information, media and operational records. If information must be retained for applicable law, security or an unresolved campaign obligation, the operator will explain the reason and any limits on deletion. Backups are reviewed separately; any restored data must be subject to previously accepted deletion requests. Published posts must be removed through the relevant platform. Requests are handled in accordance with applicable law; no automated deletion portal or software-enforced response deadline exists.</p></section>
+<section id="website">
+<h2>8. Public website and browser data</h2>
+<p>The supplied static website includes no analytics script, advertising pixel, remote font, form, or application cookie. Visiting these legal pages does not connect your TikTok account or transfer local workspace data. Clicking an external documentation or platform link makes a request to that external website.</p>
+<p>When these static pages are hosted on GitHub Pages, GitHub logs visitors' IP addresses for security purposes, independently of ClipOS. See <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages" rel="noreferrer">GitHub Pages data collection</a> and the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">GitHub Privacy Statement</a>. GitHub hosts only the static informational documents. The dashboard, database and media remain on the operator’s controlled device. If the website hosting provider changes, this policy will be updated to describe that provider.</p>
+<p>The private application uses its own necessary session cookie for owner authentication. That cookie is not issued by this separate public static website.</p></section>
+<section id="children">
+<h2>9. People appearing in media and applicable requirements</h2>
+<p>The current workspace is operated by its owner, not offered as a public service to children. The operator must use only authorized media and take responsibility for permissions and personal information involving people who appear or speak in it. The operator is responsible for checking permissions for each source video.</p>
+<p>ClipOS operates in Texas, United States. Rights available under applicable law are not waived by this policy. The operator evaluates requests under the laws applicable to the individual and processing involved; this policy makes no certification of compliance with every jurisdiction.</p></section>
+<section id="updates">
+<h2>10. Policy updates and contact</h2>
+<p>The operator will publish an updated effective date when adopting revisions and disclose material changes before new processing or additional permissions are introduced. Use the public contact identified above for privacy concerns, questions about retained data, or security reports. Privacy requests may be sent to <a href="mailto:trevorderiso5@gmail.com">trevorderiso5@gmail.com</a>.</p></section></article></div></main>
+<footer>
+<p>ClipOS · Local operation. Human review. Authorized content.</p>
+<p><a href="terms.html">Terms of Service</a> · <a href="privacy.html">Privacy Policy</a> · <a href="contact.html">Contact</a></p>
+<p>This informational website contains no dashboard, account login, OAuth callback, or campaign data.</p></footer></body></html>
